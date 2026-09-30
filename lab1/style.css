@@ -1,0 +1,214 @@
+/* Базовые стили */
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #222;
+    background: #f1f4f9;
+}
+
+/* Шапка */
+#header {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-size: 18px;
+    background: #471b59;
+    padding: 16px 24px;
+}
+
+#header > .header-name {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+#header > .header-info::before {
+    content: "• ";
+    color: #9fb4ff;
+}
+
+/* Блоки */
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.block {
+    flex: 1 1 380px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+#results-block {
+    flex-basis: 100%;
+}
+
+.block-title {
+    font-family: inherit;
+    margin-top: 0;
+    color: #2c3e70;
+}
+
+.block-title::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin-top: 6px;
+    background: #2c3e70;
+}
+
+#plot {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    border: 1px solid #d5dbe6;
+    background: #fff;
+}
+
+/* Форма */
+.field {
+    margin: 3% 0;
+}
+
+.field-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+/* Кнопки X и R */
+.choice-group > button {
+    min-width: 42px;
+    margin: 1% 1.5% 1% 0;
+    padding: 6px 10px;
+    font: inherit;
+    border: 1px solid #b8c2d4;
+    border-radius: 4px;
+    background: #fff;
+    color: #2c3e70;
+    cursor: pointer;
+}
+
+.choice-group > button:hover {
+    border-color: #2c3e70;
+    background: #eef2fb;
+}
+
+.choice-group > button:focus-visible {
+    outline: 2px solid #3d5499;
+    outline-offset: 1px;
+}
+
+.choice-group > button.active {
+    background: #2c3e70;
+    border-color: #2c3e70;
+    color: #fff;
+}
+
+.choice-group.invalid > button {
+    border-color: #c0392b;
+}
+
+#y-input {
+    margin: 1% 0;
+    padding: 1% 2%;
+    width: 60%;
+    font: inherit;
+    border: 1px solid #b8c2d4;
+    border-radius: 4px;
+}
+
+#y-input:focus {
+    outline: none;
+    border-color: #2c3e70;
+    box-shadow: 0 0 0 2px rgba(44, 62, 112, 0.2);
+}
+
+#y-input::placeholder {
+    color: #9aa3b2;
+    font-style: italic;
+}
+
+.invalid {
+    border-color: #c0392b !important;
+    background: #fff5f4;
+}
+
+.error {
+    min-height: 1.2em;
+    color: #c0392b;
+    font-size: 0.9em;
+}
+
+.buttons > button {
+    margin: 2% 2% 0 0;
+    padding: 8px 16px;
+    font: inherit;
+    border: none;
+    border-radius: 4px;
+    background: #2c3e70;
+    color: #fff;
+    cursor: pointer;
+}
+
+.buttons > button:hover {
+    background: #3d5499;
+}
+
+.buttons > button:active {
+    transform: translateY(1px);
+}
+
+#clear-btn {
+    background: #7f8796;
+}
+
+/* Таблица */
+.table-wrap {
+    overflow-x: auto;
+}
+
+#results {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#results th,
+#results td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #e1e5ec;
+    text-align: center;
+}
+
+#results > thead th {
+    background: #e8ecf5;
+}
+
+#results > tbody > tr:nth-child(even) {
+    background: #f7f9fc;
+}
+
+#results > tbody > tr:hover {
+    background: #eef2fb;
+}
+
+td.hit {
+    color: #1e8449;
+    font-weight: bold;
+}
+
+td.miss {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+.empty {
+    color: #7f8796;
+}
+
+.empty.hidden {
+    display: none;
+}
