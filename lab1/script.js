@@ -259,7 +259,8 @@ function drawPlot() {
     if (selectedR === null) {
         ctx.fillStyle = "#7f8796";
         ctx.font = "14px Arial, sans-serif";
-        ctx.fillText("Выберите R, чтобы увидеть область", 16, 24);
+        ctx.fillText("Выберите R,", 8, 20);
+        ctx.fillText("чтобы увидеть область", 8, 40);
     }
 
     // Точки с другим R: бледные и маленькие
