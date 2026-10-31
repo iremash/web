@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation files('./libs/fastcgi-lib.jar') // Указываем путь к библиотеке
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 17
+}
+
+jar {
+    manifest {
+        attributes('Main-Class': 'lab2.FastCGIServer')
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    archiveFileName = 'lab2.jar'
+}

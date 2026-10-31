@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Лабораторная работа №2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Шапка -->
+<header id="header">
+    <div class="header-name">Новошицкая Анна Николаевна</div>
+    <div class="header-info">Группа P3232</div>
+    <div class="header-info">Вариант 3461001</div>
+</header>
+
+<main id="main">
+    <!-- График -->
+    <div class="block" id="plot-block">
+        <h2 class="block-title">Область</h2>
+        <canvas id="plot" width="400" height="400"></canvas>
+    </div>
+
+    <!-- Форма -->
+    <div class="block" id="form-block">
+        <h2 class="block-title">Параметры точки</h2>
+        <form id="point-form" novalidate>
+
+            <!-- X -->
+            <div class="field">
+                <span class="field-label">X:</span>
+                <div class="choice-group" id="x-group">
+                    <button type="button" data-value="-2">-2</button>
+                    <button type="button" data-value="-1.5">-1.5</button>
+                    <button type="button" data-value="-1">-1</button>
+                    <button type="button" data-value="-0.5">-0.5</button>
+                    <button type="button" data-value="0">0</button>
+                    <button type="button" data-value="0.5">0.5</button>
+                    <button type="button" data-value="1">1</button>
+                    <button type="button" data-value="1.5">1.5</button>
+                    <button type="button" data-value="2">2</button>
+                </div>
+                <div class="error" id="x-error"></div>
+            </div>
+
+            <!-- Y -->
+            <div class="field">
+                <label class="field-label" for="y-input">Y:</label>
+                <input type="text" id="y-input" name="y" maxlength="14"
+                       placeholder="число в интервале (-5, 3)" autocomplete="off">
+                <div class="error" id="y-error"></div>
+            </div>
+
+            <!-- R -->
+            <div class="field">
+                <label class="field-label" for="r-input">R:</label>
+                <input type="text" id="r-input" name="r" maxlength="14"
+                       placeholder="число в интервале (1, 4)" autocomplete="off">
+                <div class="error" id="r-error"></div>
+            </div>
+
+            <div class="buttons">
+                <button type="submit" id="submit-btn">Проверить</button>
+                <button type="button" id="clear-btn">Очистить историю</button>
+            </div>
+            <div class="error" id="server-error"></div>
+        </form>
+    </div>
+
+    <!-- Результаты -->
+    <div class="block" id="results-block">
+        <h2 class="block-title">Результаты</h2>
+        <div class="table-wrap">
+            <table id="results">
+                <thead>
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>R</th>
+                    <th>Результат</th>
+                    <th>Дата и время</th>
+                    <th>Время работы, мкс</th>
+                </tr>
+                </thead>
+                <tbody id="results-body"></tbody>
+            </table>
+        </div>
+        <p class="empty" id="empty-msg">Пока нет ни одной проверки.</p>
+    </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
